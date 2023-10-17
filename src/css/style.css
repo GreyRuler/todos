@@ -1,0 +1,265 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	overflow: hidden;
+}
+
+::-webkit-scrollbar {
+	width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+	scroll-padding: 1rem;
+	margin-right: .25rem;
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	background-color: rgb(243, 218, 11);
+	border: .25rem solid rgb(32, 32, 32);
+}
+
+body {
+	height: 100vh;
+	background-color: #343434;
+}
+
+p {
+	margin: 0;
+}
+
+#app {
+	position: relative;
+	height: 100%;
+	display: flex;
+}
+
+.card {
+	height: calc(100% - 20px);
+	position: static;
+	margin: 10px;
+	background-color: rgb(32, 32, 32);
+}
+
+.card .card-body {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.card-item .card-body > *:not(:last-child) {
+	margin-bottom: .5rem;
+}
+
+.card .card-body#list-card-widget > *:not(:last-child) {
+	margin-bottom: 1rem;
+}
+
+.card-item {
+	height: max-content;
+	margin: 10px 0;
+	background-color: rgb(65, 65, 65);
+	transition: height .5s ease-in-out;
+}
+
+.card-item.dragged + .card-item {
+	margin-top: 0;
+}
+
+#cards {
+	border-radius: var(--bs-card-inner-border-radius);
+	/*margin-right: -1rem;*/
+	/*scrollbar-gutter: stable;*/
+}
+
+#cards > :first-child {
+	margin-top: 0;
+}
+
+#cards > :last-child {
+	margin-bottom: 0;
+}
+
+#cards .card.dragged {
+	position: absolute;
+	z-index: 999;
+	pointer-events: none;
+}
+
+#plug {
+	margin: 0;
+}
+
+.grey-color-bg {
+	background-color: rgb(125, 125, 125);
+}
+
+.baby-color {
+	background-color: rgb(243, 218, 11);
+}
+
+.card-header {
+	width: 100%;
+	height: auto;
+	max-height: 10px;
+	overflow: hidden;
+	transition: max-height .75s;
+	padding: 0;
+}
+
+.card-header.without-btn {
+	min-height: 10px;
+}
+
+.card-item:hover .card-header {
+	max-height: 100%;
+}
+
+.card-item .card-header.state-shortcut {
+	max-height: 100%;
+}
+
+.card-item .card-header.state-shortcut .btn * {
+	opacity: 1;
+}
+
+.btn-close {
+	display: none;
+}
+
+.card-item:hover .card-header .btn * {
+	opacity: 1;
+}
+
+#cards .card {
+	cursor: grab;
+}
+
+#cards .card.edit {
+	cursor: auto;
+}
+
+.filter-white {
+	filter: invert(100%) sepia(0%) saturate(7440%) hue-rotate(88deg) brightness(115%) contrast(104%);
+}
+
+.svg-icon {
+	height: 1.5rem;
+	width: 1.5rem;
+}
+
+.svg-add-icon {
+	background: url('../img/add-icon.svg') no-repeat center;
+	background-size: contain;
+}
+
+.svg-cancel-icon {
+	background: url('../img/cancel-icon.svg') no-repeat center;
+	background-size: contain;
+}
+
+.svg-close-icon {
+	background: url('../img/close-icon.svg') no-repeat center;
+	background-size: contain;
+}
+
+.card-header .btn {
+	width: 24px;
+	height: 24px;
+	padding: 0;
+	margin: 5px;
+	box-sizing: content-box;
+}
+
+.card-header .btn * {
+	height: inherit;
+	width: inherit;
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+.card-header .btn:focus {
+	border-color: rgba(0, 0, 0, 0.1);
+}
+
+.svg-option-icon {
+	background: url('../img/more-icon.svg') no-repeat center;
+	background-size: contain;
+}
+
+.svg-label-icon {
+	background: url('../img/new-label-icon.svg') no-repeat center;
+	background-size: contain;
+}
+
+.svg-edit-icon {
+	background: url('../img/edit-icon.svg') no-repeat center;
+	background-size: contain;
+}
+
+.svg-remove-icon {
+	background: url('../img/delete-icon.svg') no-repeat center;
+	background-size: contain;
+}
+
+.svg-back-icon {
+	background: url('../img/back-icon.svg') no-repeat center;
+	background-size: contain;
+}
+
+.card-header:hover .btn:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+	color: white;
+	border-color: #343434;
+	background-color: rgb(65, 65, 65);
+}
+
+.form-control:focus.form-control::placeholder {
+	color: rgba(255, 255, 255, 0.53);
+}
+
+.form-control:focus {
+	color: white;
+	border-color: #343434;
+	box-shadow: none;
+	background-color: rgb(65, 65, 65);
+}
+
+.hide-svg {
+	opacity: 0!important;
+}
+
+.card-header .btn:focus {
+	border-color: transparent;
+}
+
+.content:focus-visible {
+	outline: none;
+}
+
+.content {
+	white-space: pre-line;
+}
+
+.title-shortcut {
+	margin: auto;
+	color: black;
+	padding-left: 26px;
+}
+
+.input-group > input.form-control-color {
+	width: calc(1.5em + .75rem + 2px);
+	flex: 0 1 auto;
+}
+
+/*.card-header[style^=background-color] {*/
+/*	background-color: red !important;*/
+/*}*/

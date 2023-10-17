@@ -1,0 +1,40 @@
+.shortcuts-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.card .card-body.shortcuts-body {
+	height: 7.5rem;
+	overflow-y: auto;
+}
+
+.card .card-body.shortcuts-body::-webkit-scrollbar-thumb {
+	border: .25rem solid #414141;
+}
+
+.shortcuts-container > *:not(:last-child) {
+	margin-right: .25rem;
+}
+
+.color-shortcut {
+	width: 1rem;
+	height: 1rem;
+	border-radius: .25rem;
+}
+
+.card-item .card-body > label[for^="check-shortcut"] {
+	margin: 0;
+	padding: .5rem 1rem;
+	cursor: pointer;
+}
+
+label[for^="check-shortcut"]:hover {
+	background-color: #323539;
+}
+
+label[for^="check-shortcut"] > *:not(:last-child) {
+	margin-right: .5rem;
+}
+
+.name-shortcut {
+}
